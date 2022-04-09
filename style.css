@@ -1,0 +1,100 @@
+* {
+  /* IMPORTANTE / ÚTIL: asterisco é um seletor universal, as propriedades aqui se aplicam a todos os elementos da página */
+  margin: 0;
+}
+
+html,
+body {
+  /* vamos definir uma variável para essa cor que escolhemos */
+  --black: hsl(240, 6%, 13%);
+  --grey: hsl(240, 9%, 89%);
+  
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  /* webkit significa browser */
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  color: var(--grey)
+}
+
+main {
+  background: url(images/background.svg);
+  width: 375px;
+  height: 812px;
+}
+
+.container {
+  max-width: 250px;
+  margin: auto; /* mayk colocou margin-left e margin-right, ambos com auto; */
+  text-align: center;
+}
+
+.avatar {
+  width: 10rem; 
+  /* 10 multiplicado pelo pixel padrão do texto, que é 16 px. 160px era o tamanho da img no Figma */
+  
+  margin: 11.5rem auto 0; 
+  /* 11.5rem porque no Figma margin-top era 184px, dividido por 16px dá 11.5rem;
+
+  /* Sobre margin: */
+  /* Quando dois valores são especificados, a primeira margem é aplicada aos lados superior e inferior, e a segunda aos lados esquerdo e direito. */
+  /* Quando três valores são especificados, a primeira margem é apliacada ao topo, a segunda aos lados esquerdo e direito, e a terceira ao lado inferior. */
+  /* Quando quatro valores são especificados, as margens são aplicadas aos lados superior, direito, inferior e esquerdo, nesta ordem (sentido horário). */
+
+  position: relative;
+}
+
+.avatar span { /* procurar na classe avatar um span */ 
+  position: absolute; /* permite sobreposição  (PESQUISAR)*/
+  top: -15px; /* deslocar o elemento 15 px pra cima  (PESQUISAR) */
+  /* nesse momento, aplicamos position: relative na classe avatar, fazendo com ela seja agora o limite para o absolute (PESQUISAR) */
+  z-index: 1;
+}
+
+.avatar > img { /* isso pega apenas o primeiro item dentro da classe */
+  width: 10rem;
+  height: 11.5rem;
+  /* isso fez com que a imagem ficasse esticada */
+  /* para consertar: */
+  object-fit: cover; /* o elemento vai cobrir o espaço disponível (PESQUISAR) */
+  /* para criar a máscara usaremos a propriedade clip-patch */
+  /* para obter a forma exata e os valores, usaremos o https://bennettfeely.com/clippy/ */
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  /* o clip-path fez com que o span perdesse o position:absolute, então vamos colocar um z-index lá */
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem; /* porque a altura no figma era 24px, que dividido por 16px, dá 1.5rem */
+}
+
+a {
+  color: var(--grey);
+  text-decoration: none;
+  margin-top: 0.25rem; /* porque a altura no figma era 4px, que dividido por 16px, dá 0.25rem */
+
+  display: flex; 
+  gap: 0.75rem; /* porque o espaçamento fixo no figma era 8px */ 
+  justify-content: center;
+}
+
+p {
+  margin-top: 2rem;
+}
+
+ul {
+  margin-top: 4rem;
+  list-style: none; /* esconder os bullet points */
+  padding: 0; /* centralizar os objetos */
+
+  /* alinhar os objetos horizontalmente */
+  display: flex;
+  gap: 0.5rem; /* porque o espaçamento era 8px */ 
+  /* mas no meu código isso criou um espaço de 16 px entre o segundo e terceiro elemento */
+  justify-content: center;
+
+}
