@@ -3,7 +3,8 @@ const linksSocialMedia = {
   youtube: 'UCGpX1hSB5xyxAvtLry2yK3A',
   facebook: 'matheusguifer',
   instagram: 'matheusguifer',
-  twitter: 'matheusguifer'
+  twitter: 'matheusguifer',
+  linkedin: 'in/matheusguifer'
 }
 
   // padrões de escrita: camelCase; PascalCase; snake_case
