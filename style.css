@@ -13,6 +13,8 @@ body {
   font-family: 'Roboto', sans-serif;
   /* webkit significa browser */
   -webkit-font-smoothing: antialiased;
+  background: rgb(9,9,10);
+  background: linear-gradient(0deg, rgba(9,9,10,1) 0%, rgba(32,32,36,1) 39%, rgba(255,0,142,1) 63%, rgba(255,122,41,1) 85%, rgba(255,205,30,1) 100%);
 }
 
 body {
@@ -40,7 +42,6 @@ main {
   
   margin: 11.5rem auto 0; 
   /* 11.5rem porque no Figma margin-top era 184px, dividido por 16px dá 11.5rem;
-
   /* Sobre margin: */
   /* Quando dois valores são especificados, a primeira margem é aplicada aos lados superior e inferior, e a segunda aos lados esquerdo e direito. */
   /* Quando três valores são especificados, a primeira margem é apliacada ao topo, a segunda aos lados esquerdo e direito, e a terceira ao lado inferior. */
@@ -97,17 +98,15 @@ ul {
   gap: 0.5rem; /* porque o espaçamento era 8px */ 
   /* mas no meu código isso criou um espaço de 16 px entre o segundo e terceiro elemento */
   justify-content: center;
-
 }
 
 @media (min-width: 800px) {
-main {
-  background: url(images/Mobile.svg) no-repeat center/cover;
-  background-color: #202024;
-  height: 80vh;
-}
-ul {
-    margin: 1.5rem auto 0;
-    gap: .75rem;
-}
+  main {
+    display: grid;
+    place-items: center;
+    background: url(images/background.svg) no-repeat center/cover;
+    background-color: #202024;
+    height: 100vh;
+    width: 50vw;
+  }
 }
